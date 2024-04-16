@@ -1,0 +1,77 @@
+.homes {
+  grid-column: start / end;
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 8rem;
+  justify-items: center;
+}
+
+.home {
+  background-color: $color-grey-light-1;
+  position: relative;
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__like,
+  &__liked {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    stroke-width: 2.5px;
+    right: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  &__liked {
+    fill: $color-primary;
+  }
+
+  &__like {
+    stroke: $color-primary;
+    fill: transparent;
+  }
+
+  .heading-4 {
+    background-color: $color-secondary;
+    padding: 1.5rem 1.25rem;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    font-family: $font-display;
+  }
+
+  &__features {
+    font-size: 1.7rem;
+    padding: 0 2rem;
+    margin: 2rem 0 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+
+    svg {
+      fill: $color-primary;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,72 @@
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+  font-family: $font-display;
+}
+
+.heading {
+  &--light {
+    color: $color-grey-light-1;
+  }
+  &--dark {
+    color: $color-grey-dark-1;
+  }
+}
+
+.heading-1 {
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: $color-grey-light-1;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.heading-3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: $color-primary;
+  font-weight: 400;
+}
+
+.heading-4 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.btn {
+  padding: 1.8rem 3rem;
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: $font-display;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
+
+.u-mb-sm {
+  margin-bottom: 2rem;
+}
+.u-mb-md {
+  margin-bottom: 3rem;
+}
+.u-mb-lg {
+  margin-bottom: 4rem;
+}
+.u-mb-hg {
+  margin-bottom: 8rem;
+}

@@ -1,0 +1,66 @@
+.story {
+  &__pictures {
+    grid-column: full-start / col-end 4;
+    background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.5)),
+      url(../img/back.jpg);
+    background-size: cover;
+    padding: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end;
+      justify-content: start;
+    }
+  }
+
+  &__img {
+    width: 66%;
+    position: relative;
+
+    &--1 {
+      width: 100%;
+      display: block;
+    }
+
+    &--2 {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+
+      @media screen and (max-width: $bp-medium) {
+        width: 66%;
+        top: 25%;
+        left: 75%;
+      }
+    }
+  }
+
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 9vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    @media screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end;
+      grid-row: 4 / 5;
+    }
+  }
+
+  &__text {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin-bottom: 4rem;
+  }
+}

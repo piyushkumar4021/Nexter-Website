@@ -1,0 +1,67 @@
+.footer {
+  background-color: $color-secondary;
+  grid-column: full-start / full-end;
+
+  padding: 8rem;
+  text-align: center;
+
+  @media screen and (max-width: $bp-medium) {
+    padding: 6rem;
+  }
+
+  @media screen and (max-width: $bp-small) {
+    padding: 4rem;
+  }
+
+  &__logo {
+    height: 5rem;
+    display: inline-block;
+    margin-bottom: 9rem;
+    filter: saturate(0.7);
+
+    @media screen and (max-width: $bp-small) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+
+    &__item {
+      display: block;
+    }
+
+    &__link {
+      &:visited,
+      &:link {
+        display: block;
+        text-decoration: none;
+        font-size: 1.7rem;
+        color: $color-grey-light-1;
+        padding: 1.5rem;
+        transition: all 0.2s;
+        line-height: 1.5;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        background-color: lighten($color-secondary, 10%);
+      }
+
+      &:active {
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  .legal {
+    font-size: 1.7rem;
+    color: $color-grey-light-2;
+    margin: 6rem auto 0;
+    width: 75%;
+  }
+}

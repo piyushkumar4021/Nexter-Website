@@ -1,0 +1,134 @@
+.menu {
+  cursor: pointer;
+  position: fixed;
+  right: 5rem;
+  top: 5rem;
+  z-index: 20;
+  height: 2.6rem;
+
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    background-color: $color-primary;
+    width: 5rem;
+    height: 3px;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      background-color: $color-primary;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      transform: translateY(-1.3rem);
+    }
+
+    &::after {
+      transform: translateY(1rem);
+    }
+  }
+}
+
+.nav.open + .menu > .menu__icon {
+  background: transparent;
+
+  &::before {
+    transform: translateY(0.3rem) rotate(135deg);
+  }
+  &::after {
+    transform: rotate(-135deg);
+  }
+}
+
+.nav.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translate(0);
+}
+
+.nav {
+  position: fixed;
+  width: 40rem;
+  // width: min(45rem, 30vw);
+  background-color: $color-secondary;
+  height: 100vh;
+  z-index: 15;
+
+  @media screen and (max-width: $bp-smallest) {
+    width: 100%;
+  }
+
+  padding-top: 5rem;
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-template-rows: max-content 1fr max-content 1fr;
+  row-gap: 5rem;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateX(-100%);
+
+  transition: all 0.5s;
+
+  .btn {
+    justify-self: center;
+    align-self: self-start;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-align: center;
+
+    color: $color-grey-light-1;
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__img {
+    width: 20rem;
+    height: 20rem;
+    clip-path: circle(10rem at 50% 50%);
+    filter: brightness(85%);
+    object-fit: cover;
+    display: block;
+  }
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__link {
+    &:visited,
+    &:link {
+      color: $color-grey-light-1;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+    }
+  }
+}
